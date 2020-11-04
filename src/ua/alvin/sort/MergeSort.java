@@ -24,16 +24,16 @@ public class MergeSort {
     }
 //    int[] array = new int[]{20, 35, -15, 7, 55, 1,-22};
     private static void merge(int[] input, int start, int mid, int end) {
-        if (input[mid - 1] <= input[mid]) return;
+//        if (input[mid - 1] <= input[mid]) return;
 
         int i = start;
         int j = mid;
         int tempIndex = 0;
 
-        int[] temp = new int[end - start];
+        int[] temp = new int[end-start];
 
         while (i < mid && j < end) {
-            System.out.print(input[i] + " " + input[j] + " ");
+//            System.out.print(input[i] + " " + input[j] + " ");
             temp[tempIndex++] = input[i] <= input[j] ? input[i++] : input[j++];
         }
 
@@ -45,7 +45,7 @@ public class MergeSort {
 
         long clockOn = System.currentTimeMillis();
         mergeSort(arr, start, end);
-        System.out.println(Arrays.toString(arr));
+                System.out.println(Arrays.toString(arr));
         long clockOff = System.currentTimeMillis();
         System.out.println("Sort time: " + (clockOff - clockOn) + " ms.");
     }

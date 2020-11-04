@@ -8,8 +8,8 @@ import java.util.Random;
 public class ShellSort {
 
     public static void main(String[] args) {
-//        int[] array = new int[]{5,2,0,4,1,-2};
-        int[] array = createRandomArray(1000000);
+        int[] array = new int[]{5,2,0,4,1,-2};
+//        int[] array = createRandomArray(1000000);
         evaluateAlgorithm(array);
     }
 
@@ -20,7 +20,6 @@ public class ShellSort {
             for (int i = gap; i < array.length; i++) {
 
                 int newElem = array[i];
-
                 int j = i;
 
                 while (j >= gap && array[j - gap] > newElem) {
