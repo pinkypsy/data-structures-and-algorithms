@@ -3,37 +3,36 @@ package ua.alvin.sort;
 import java.util.Arrays;
 import java.util.Random;
 
-/*in-place stable sort, faster than selection sort but still O(n^2)*/
-public class InsertionSort {
+public class InsertionSortRecursive {
+
     public static void main(String[] args) {
-        int[] array = new int []{3,2,1};
+        int[] array = new int[]{20, 35, -15, 7, 55, 1, -22};
 //        int[] array = createRandomArray(10000);
         evaluateAlgorithm(array);
     }
 
     private static void evaluateAlgorithm(int[] arr) {
         long begin = System.currentTimeMillis();
-        insertionSort(arr);
+        insertionSort(arr, arr.length);
         System.out.println(Arrays.toString(arr));
         long end = System.currentTimeMillis();
         System.out.println("Sort time: " + (end - begin) + " ms.");
     }
 
-    private static void insertionSort(int[] arr) {
+    private static void insertionSort(int[] input, int numItems) {
+        if (numItems < 2) return;
 
-        for (int firstUnsortedIndex = 1; firstUnsortedIndex < arr.length; firstUnsortedIndex++) {
-            int newElement = arr[firstUnsortedIndex];
+        insertionSort(input, numItems - 1);
 
-            int i;
+        int newElem = input[numItems - 1];
 
-            for (i = firstUnsortedIndex; i > 0 && arr[i - 1] > newElement; i--) {
-                arr[i] = arr[i - 1];
-            }
-            arr[i] = newElement;
+        int i;
+
+        for (i = numItems-1; i > 0 && input[i - 1] > newElem; i--) {
+            input[i] = input[i - 1];
         }
+        input[i] = newElem;
     }
-
-
 
     private static int[] createRandomArray(int size) {
         int[] array = new int[size];
