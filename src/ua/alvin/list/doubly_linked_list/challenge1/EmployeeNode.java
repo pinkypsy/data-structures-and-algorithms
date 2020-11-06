@@ -1,14 +1,20 @@
-package ua.alvin.list.doubly_linked_list;
-
-import ua.alvin.entity.Employee;
+package ua.alvin.list.doubly_linked_list.challenge1;
 
 public class EmployeeNode {
 
     private Employee employee;
-    private EmployeeNode previous;
     private EmployeeNode next;
+    private EmployeeNode previous;
 
     public EmployeeNode(Employee employee) {
+        this.employee = employee;
+    }
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
         this.employee = employee;
     }
 
@@ -20,10 +26,6 @@ public class EmployeeNode {
         this.next = next;
     }
 
-    public String toString(){
-        return employee.toString();
-    }
-
     public EmployeeNode getPrevious() {
         return previous;
     }
@@ -32,7 +34,9 @@ public class EmployeeNode {
         this.previous = previous;
     }
 
-    public Employee getEmployee() {
-        return employee;
+    public String toString() {
+        return employee.toString();
     }
+
+
 }
