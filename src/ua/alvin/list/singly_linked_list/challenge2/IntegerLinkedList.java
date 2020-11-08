@@ -1,5 +1,8 @@
 package ua.alvin.list.singly_linked_list.challenge2;
 
+import java.util.AbstractList;
+import java.util.Stack;
+
 public class IntegerLinkedList {
 
     private IntegerNode head;
@@ -24,26 +27,47 @@ public class IntegerLinkedList {
         return removedNode;
     }
 
-    public void insertSorted(Integer value) {
-        IntegerNode current = head;
+    public void insertSorted(Integer value){
+
+        if (isEmpty() || head.getValue() >= value){
+            addToFront(value);
+            return;
+        }
+
+        //find insertion point
+
+        IntegerNode previous = head;
+        IntegerNode current = head.getNext();
+
+        while (current != null && current.getValue() < value){
+            previous = current;
+            current = current.getNext();
+        }
+
+
         IntegerNode newNode = new IntegerNode(value);
+        previous.setNext(newNode);
+        newNode.setNext(current);
 
-        if (isEmpty() || current.getValue() >= newNode.getValue()) {
-            newNode.setNext(head);
-            head = newNode;
-        } else {
-//            while (current.getNext() != null) {
-
-                IntegerNode advanceNode = current.getNext();
-
-                if (advanceNode == null || advanceNode.getValue() > newNode.getValue()) {
-                    current.setNext(newNode);
-                    newNode.setNext(advanceNode);
-                }
-                current = current.getNext();
-            }
-//        }
         size++;
+
+
+//    public void insertSorted(Integer value) {
+//        IntegerNode current = head;
+//        IntegerNode newNode = new IntegerNode(value);
+//
+//        if (isEmpty() || current.getValue() >= newNode.getValue()) {
+//            newNode.setNext(head);
+//            head = newNode;
+//        } else {
+//                IntegerNode advanceNode = current.getNext();
+//
+//                if (advanceNode == null || advanceNode.getValue() > newNode.getValue()) {
+//                    current.setNext(newNode);
+//                    newNode.setNext(advanceNode);
+//                }
+//        }
+//        size++;
 
 
 //        IntegerNode current = head;

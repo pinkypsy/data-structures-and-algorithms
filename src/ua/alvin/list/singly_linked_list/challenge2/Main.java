@@ -1,5 +1,6 @@
 package ua.alvin.list.singly_linked_list.challenge2;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
@@ -18,12 +19,15 @@ public class Main {
         Random random = new Random();
 
         int size = 6;
+        int [] ints = new int[size];
         for (int i = 0; i < size; i++) {
             int j = random.nextInt(size);
+            ints[i] = j;
             System.out.println("int: " + j);
             list.insertSorted(j);
             list.printList();
         }
+        System.out.println(Arrays.toString(ints));
 //        list.insertSorted(eight);
 //        list.printList();
 //        list.insertSorted(three);

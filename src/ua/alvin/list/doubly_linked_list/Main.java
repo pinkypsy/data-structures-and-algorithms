@@ -9,14 +9,14 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        ua.alvin.list.doubly_linked_list.challenge1.Employee janeJones = new ua.alvin.list.doubly_linked_list.challenge1.Employee("Jane", "Jones", 123);
-        ua.alvin.list.doubly_linked_list.challenge1.Employee johnDoe = new ua.alvin.list.doubly_linked_list.challenge1.Employee("John", "Doe", 4567);
-        ua.alvin.list.doubly_linked_list.challenge1.Employee marySmith = new ua.alvin.list.doubly_linked_list.challenge1.Employee("Mary", "Smith", 22);
-        ua.alvin.list.doubly_linked_list.challenge1.Employee mikeWilson = new ua.alvin.list.doubly_linked_list.challenge1.Employee("Mike", "Wilson", 3245);
+        Employee janeJones = new Employee("Jane", "Jones", 123);
+        Employee johnDoe = new Employee("John", "Doe", 4567);
+        Employee marySmith = new Employee("Mary", "Smith", 22);
+        Employee mikeWilson = new Employee("Mike", "Wilson", 3245);
 
-        ua.alvin.list.doubly_linked_list.challenge1.Employee billEnd = new ua.alvin.list.doubly_linked_list.challenge1.Employee("Bill", "End", 78);
+        Employee billEnd = new Employee("Bill", "End", 78);
 
-        ua.alvin.list.doubly_linked_list.challenge1.EmployeeDoublyLinkedList list = new EmployeeDoublyLinkedList();
+        EmployeeDoublyLinkedList list = new EmployeeDoublyLinkedList();
 
         list.addToFront(janeJones);
         list.addToFront(johnDoe);
