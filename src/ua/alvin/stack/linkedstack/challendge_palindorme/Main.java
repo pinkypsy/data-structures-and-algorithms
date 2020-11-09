@@ -1,4 +1,4 @@
-package ua.alvin.stack.linkedstack;
+package ua.alvin.stack.linkedstack.challendge_palindorme;
 
 import ua.alvin.entity.Employee;
 
