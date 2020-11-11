@@ -5,14 +5,14 @@ import java.util.Objects;
 public class Employee {
     private String firstName;
     private String lastName;
-    private int age;
+    private int id;
 
-    public int getAge() {
-        return age;
+    public int getId() {
+        return id;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getFirstName() {
@@ -31,8 +31,8 @@ public class Employee {
         this.lastName = lastName;
     }
 
-    public Employee(String firstName, String lastName, int age) {
-        this.age = age;
+    public Employee(String firstName, String lastName, int id) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
     }
@@ -42,14 +42,14 @@ public class Employee {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Employee employee = (Employee) o;
-        return age == employee.age &&
+        return id == employee.id &&
                 firstName.equals(employee.firstName) &&
                 lastName.equals(employee.lastName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(age, firstName, lastName);
+        return Objects.hash(id, firstName, lastName);
     }
 
     @Override
@@ -57,7 +57,7 @@ public class Employee {
         return "Employee{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", age=" + age +
+                ", id=" + id +
                 '}';
     }
 }
