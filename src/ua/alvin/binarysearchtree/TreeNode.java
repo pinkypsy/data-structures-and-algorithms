@@ -102,9 +102,9 @@ public class TreeNode {
     @Override
     public String toString() {
         return "TreeNode{" +
-                "data=" + data +
+                "data=" + data +/*
                 ", leftChild=" + leftChild +
-                ", rightChild=" + rightChild +
+                ", rightChild=" + rightChild +*/
                 '}';
     }
 }

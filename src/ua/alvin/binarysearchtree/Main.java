@@ -8,7 +8,6 @@ public class Main {
         tree.insert(20);
         tree.insert(15);
         tree.insert(27);
-        tree.insert(39);
         tree.insert(29);
         tree.insert(26);
         tree.insert(22);
@@ -23,5 +22,8 @@ public class Main {
         System.out.println();
         System.out.println(tree.min());
         System.out.println(tree.max());
+        System.out.println();
+        tree.delete(27);
+        tree.traverseInOrder();
     }
 }

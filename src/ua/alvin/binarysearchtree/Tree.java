@@ -48,13 +48,13 @@ public class Tree {
 
     private TreeNode delete(TreeNode subtreeRoot, int value) {
         if (subtreeRoot == null) {
-            return null;
+            return subtreeRoot;
         }
 
         if (value < subtreeRoot.getData()){
-            subtreeRoot.setLeftChild(delete(subtreeRoot, value));
+            subtreeRoot.setLeftChild(delete(subtreeRoot.getLeftChild(), value));
         } else if (value > subtreeRoot.getData()){
-            subtreeRoot.setRightChild(delete(subtreeRoot, value));
+            subtreeRoot.setRightChild(delete(subtreeRoot.getRightChild(), value));
         } else {
             //case 1 & 2: node has 0 or 1 child(ren)
             if (subtreeRoot.getLeftChild() == null){
