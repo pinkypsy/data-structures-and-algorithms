@@ -33,7 +33,7 @@ public class PriorityQueueTest {
 //        System.out.println(pq.remove(54));
 
         Object[] ints = pq.toArray();
-        for (Object num: ints) {
+        for (Object num : ints) {
             System.out.println(num);
         }
 

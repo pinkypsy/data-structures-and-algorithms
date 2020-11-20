@@ -5,14 +5,14 @@ import java.util.Random;
 /*in-place unstable sort, faster than bubble sort but still O(n^2)*/
 public class SelectionSort {
     public static void main(String[] args) {
-        int[] array = createRandomArray(10);
+        int[] array = createRandomArray(10000);
         evaluateAlgorithm(array);
     }
 
     private static void evaluateAlgorithm(int [] arr){
         long begin = System.currentTimeMillis();
         selectionSort(arr);
-        System.out.println(Arrays.toString(arr));
+//        System.out.println(Arrays.toString(arr));
         long end = System.currentTimeMillis();
         System.out.println("Sort time: " + (end - begin) + " ms.");
     }
