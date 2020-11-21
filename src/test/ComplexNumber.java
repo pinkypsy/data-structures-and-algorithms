@@ -5,13 +5,12 @@ public class ComplexNumber {
     private final double imaginaryPart;
 
     public ComplexNumber(double realPart, double imaginaryPart) {
-        checkNaN(realPart, imaginaryPart);
-
+        checkForNaN(realPart, imaginaryPart);
         this.realPart = realPart;
         this.imaginaryPart = imaginaryPart;
     }
 
-    private void checkNaN(double realPart, double imaginaryPart) {
+    private void checkForNaN(double realPart, double imaginaryPart) {
         if (Double.isNaN(realPart)) {
             throw new ArithmeticException("Real part is Not-a-Number (NaN)");
         } else if (Double.isNaN(imaginaryPart)) {
@@ -28,23 +27,23 @@ public class ComplexNumber {
     }
 
     public ComplexNumber add(ComplexNumber anotherComplexNumber) {
-        if (anotherComplexNumber == null) {
-            System.err.println("Added number is NULL! Return initial object");
-            return this;
-        }
+
+        /*FIXME: check for null unless fail-fast behavior is expected*/
         return new ComplexNumber(this.realPart + anotherComplexNumber.realPart,
                             this.imaginaryPart + anotherComplexNumber.imaginaryPart);
     }
 
     @Override
     public boolean equals(Object object) {
-        if (object == this)
+        if (object == this) {
             return true;
-        if (!(object instanceof ComplexNumber))
+        }
+        if (!(object instanceof ComplexNumber)) {
             return false;
+        }
         ComplexNumber anotherComplexNumber = (ComplexNumber) object;
-        return Double.compare(this.realPart, anotherComplexNumber.realPart) == 0 &&
-                Double.compare(this.imaginaryPart, anotherComplexNumber.imaginaryPart) == 0;
+        return Double.compare(this.realPart, anotherComplexNumber.realPart) == 0
+               && Double.compare(this.imaginaryPart, anotherComplexNumber.imaginaryPart) == 0;
     }
 
     @Override
@@ -56,7 +55,7 @@ public class ComplexNumber {
 
     @Override
     public String toString() {
-        return "(" + realPart + (imaginaryPart < 0 ? "" : "+") + imaginaryPart + "i)";
+        return "(" + realPart + ((imaginaryPart < 0) ? "" : "+") + imaginaryPart + "i)";
     }
 
     public static void main(String[] args) {
