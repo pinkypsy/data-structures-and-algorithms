@@ -20,7 +20,7 @@ public class ComplexNumber {
 
     public ComplexNumber add(ComplexNumber anotherComplexNumber) {
 
-        /*XXX: check for null unless fail-fast behavior is expected*/
+        /*TODO: check for null unless fail-fast behavior is expected*/
         return new ComplexNumber(this.realPart + anotherComplexNumber.realPart,
                             this.imaginaryPart + anotherComplexNumber.imaginaryPart);
     }
