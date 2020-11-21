@@ -18,17 +18,9 @@ public class ComplexNumber {
         }
     }
 
-    public double getRealPart() {
-        return realPart;
-    }
-
-    public double getImaginaryPart() {
-        return imaginaryPart;
-    }
-
     public ComplexNumber add(ComplexNumber anotherComplexNumber) {
 
-        /*FIXME: check for null unless fail-fast behavior is expected*/
+        /*XXX: check for null unless fail-fast behavior is expected*/
         return new ComplexNumber(this.realPart + anotherComplexNumber.realPart,
                             this.imaginaryPart + anotherComplexNumber.imaginaryPart);
     }
@@ -58,16 +50,24 @@ public class ComplexNumber {
         return "(" + realPart + ((imaginaryPart < 0) ? "" : "+") + imaginaryPart + "i)";
     }
 
+    public double getRealPart() {
+        return realPart;
+    }
+
+    public double getImaginaryPart() {
+        return imaginaryPart;
+    }
+
     public static void main(String[] args) {
         ComplexNumber complexNumber = new ComplexNumber(1, 1);
-        ComplexNumber complexNumber2 = new ComplexNumber(2, 3);
+        ComplexNumber complexNumber2 = new ComplexNumber(1, 1);
 
         System.out.println(complexNumber.equals(complexNumber2));
         double a1 = 3. / 0;
         double a2 = 3 / 0.;
 
         System.out.println(complexNumber.add(complexNumber2));
-        System.out.println(complexNumber.add(null));
+//        System.out.println(complexNumber.add(null));
 
         System.out.println(complexNumber.add(new ComplexNumber(1, a1 - a2)));
     }
